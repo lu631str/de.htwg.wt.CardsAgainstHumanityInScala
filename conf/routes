@@ -2,12 +2,24 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Controller for Sudoku
+# Controller for CaH
 
-GET     /                           controllers.SudokuController.sudoku
+GET     /                           controllers.CahController.home
 
-GET     /about                      controllers.SudokuController.about
+GET     /rules                      controllers.CahController.rules
+
+GET     /start                      controllers.CahController.start
+
+
+POST     /eval/:input                       controllers.CahController.eval(input: String)
 
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+
+
+
+
+
+

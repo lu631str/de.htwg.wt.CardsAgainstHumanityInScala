@@ -1,0 +1,29 @@
+* {
+    background-color: #000000;
+    color: #11f31b;
+    font-family: Tahoma, Arial, sans-serif;
+
+
+}
+
+.rule-body {
+    padding: 30px;
+    justify-content: center;
+}
+
+.tile-combo {
+    padding: 5px;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 5px;
+}
+
+.title {
+    margin-left: 110px;
+
+}
+

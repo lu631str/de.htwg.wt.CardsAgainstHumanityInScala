@@ -1,7 +1,21 @@
+
 @()
 
-@main("HTWG Sudoku") {
 
-    <h1>"Hello World"</h1>
+@main( "Cah" ) {
+    <div class="center">
+
+    <h1>Welcome to Cards Against Humanity</h1>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/index.css")">
+
+
+    <p>
+        <a target="_blank" href="/rules">Click here to open the rules</a>
+    </p>
+    <p>
+        <a href="@routes.CahController.start()">Start Game</a>
+    </p>
+
+    </div>
 
 }
