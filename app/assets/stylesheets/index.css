@@ -1,0 +1,18 @@
+* {
+    background-color: #000000;
+    color: #11f31b;
+    font-family: 'Common Pixel', sans-serif;
+
+}
+
+.rule-body {
+    justify-content: center;
+}
+
+.tile-combo {
+    padding: 5px;
+}
+
+.center {
+    margin-left: 33%;
+}
