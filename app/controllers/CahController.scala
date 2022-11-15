@@ -2,23 +2,31 @@ package controllers
 
 import view.CaHMain
 import play.api.mvc._
+import play.twirl.api.Html
+import view.CaHMain.controller
 
 import javax.inject._
 
 @Singleton
 class CahController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
   val gameController = CaHMain.controller
-  def gameState =  gameController.getCurrentStateAsString()
 
-  def home= Action {
+  def gameState = gameController.getCurrentStateAsString()
+
+  def home = Action {
+    Ok(print())
+  }
+
+  def about(): Action[AnyContent] = Action {
     Ok(views.html.index())
   }
 
-  def rules= Action {
-    Ok(views.html.rules())
+  def print(): Html = {
+    views.html.cah(controller)
   }
 
-  def start = Action {
+
+  def startGame = Action {
     Ok(gameState)
   }
 
@@ -26,18 +34,5 @@ class CahController @Inject()(cc: ControllerComponents) extends AbstractControll
     gameController.eval(input)
     Ok(gameState)
   }
-
-  def allRoutes = {
-    """
-    GET  /
-    GET  / rules
-    GET  / start
-    POST  / eval
-    """
-  }
 }
-
-
-
-
 
