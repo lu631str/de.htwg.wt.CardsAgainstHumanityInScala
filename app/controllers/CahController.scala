@@ -10,7 +10,6 @@ import javax.inject._
 @Singleton
 class CahController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
   val gameController = CaHMain.controller
-
   def gameState = gameController.getCurrentStateAsString()
 
   def home = Action {
@@ -27,7 +26,7 @@ class CahController @Inject()(cc: ControllerComponents) extends AbstractControll
 
 
   def startGame = Action {
-    Ok(gameState)
+    Ok(views.html.newGame(controller))
   }
 
   def eval(input: String) = Action {
