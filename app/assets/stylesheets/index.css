@@ -1,8 +1,86 @@
 * {
     background-color: #000000;
-    color: #11f31b;
-    font-family: 'Common Pixel', sans-serif;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+@keyframes dropIn {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -200%, 0) rotateX(1170deg) rotateY(10deg);
+	}
+	30% {
+	    opacity: 1;
+	    transform: translate3d(0, +30%, 0) rotateX(80deg);
+	}
+	50% {
+    	 transform: translate3d(0, +30%, 0) rotateX(88deg);
+    }
+	60% {
+	    transform: translate3d(0, +30%, 0) rotateX(90deg);
+	}
+	to {
+		transform: translate3d(0, 0, 0) rotateX(0deg);
+	}
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.index-title {
+    font-size: 3em;
+    font-weight: bold;
+    animation: dropIn ease-out 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.index-subtitle {
+    font-size: 1em;
+    animation: fadeIn ease-out 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+.center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 1em;
+    margin: 20px;
+    opacity: 0;
+    animation: fadeIn ease-out 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    transition: .4s ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-width: 5px;
 }
 
 .rule-body {
@@ -11,8 +89,4 @@
 
 .tile-combo {
     padding: 5px;
-}
-
-.center {
-    margin-left: 33%;
 }

@@ -1,19 +1,17 @@
 @()
 
 
-@main( "Cah" ) {
-    <div class="center">
+@main( "CAH" ) {
+    <div class="center-container">
 
-    <h1>Welcome to Cards Against Humanity</h1>
-    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/index.css")">
+        <h1 class="index-title">Cards Against Humanity</h1>
+        <p class="index-subtitle">Welcome, have fun playing a round of this polite and family-friendly card game.</p>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/index.css")">
 
-
-    <p>
-        <a target="_blank" href="/rules">Click here to open the rules</a>
-    </p>
-    <p>
-        <a href="@routes.CahController.start()">Start Game</a>
-    </p>
+        <form>
+            <button type="submit" formtarget="_blank" formaction="/rules">View Rules</button>
+            <button type="submit" formtarget="_blank" formaction="@routes.CahController.start()">Start Game</button>
+        </form>
 
     </div>
 
