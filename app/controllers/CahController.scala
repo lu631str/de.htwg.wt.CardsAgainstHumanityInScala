@@ -25,11 +25,15 @@ class CahController @Inject()(cc: ControllerComponents) extends AbstractControll
   }
 
 
-  def startGame = Action {
+  def startGame: Action[AnyContent] = Action {
     Ok(views.html.newGame(controller))
   }
 
-  def eval(input: String) = Action {
+  def gameScreen: Action[AnyContent] = Action {
+    Ok(views.html.gameScreen(controller))
+  }
+
+  def eval(input: String): Action[AnyContent] = Action {
     gameController.eval(input)
     Ok(gameState)
   }

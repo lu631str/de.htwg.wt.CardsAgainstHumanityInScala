@@ -26,7 +26,7 @@
     animation: fadeIn ease-out 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    animation-delay: 2s;
+    animation-delay: 1s;
     opacity: 0;
 }
 
@@ -55,9 +55,29 @@
     border-width: 5px;
 }
 
-.game-name-list {
-    max-width: 650px;
+.game-name-list-width {
+    min-width: 50%;
+    max-width: 400px;
+    margin: auto;
 }
+
+.game-name-list {
+    min-width: 50%;
+    max-width: 400px;
+}
+
+.game-name-list li {
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  height: 0;
+}
+
+.game-name-list li.show {
+  opacity: 1;
+  height: auto;
+}
+
+
 
 .vh-90{
     min-height:90vh;

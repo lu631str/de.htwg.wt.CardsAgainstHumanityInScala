@@ -6,7 +6,8 @@
 
 GET         /                    controllers.CahController.home
 GET         /about               controllers.CahController.about
-GET         /startGame             controllers.CahController.startGame
+GET         /startGame           controllers.CahController.startGame
+GET         /gameScreen          controllers.CahController.gameScreen
 
 
 POST        /eval/:input         controllers.CahController.eval(input: String)

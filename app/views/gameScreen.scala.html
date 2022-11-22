@@ -1,0 +1,20 @@
+@(controller: control.ControllerInterface)
+
+@main("HTWG CAH") {
+<div class="d-flex align-items-center vh-90">
+    <div class="container justify-centerContainer-center">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/game.css")">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <p class="game-subtitle">player 1</p>
+                </div>
+                <div class="col">
+                    <p class="game-subtitle">player 2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@routes.Assets.versioned("javascripts/game.js")" ></script>
+}
