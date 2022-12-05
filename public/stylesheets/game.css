@@ -1,0 +1,84 @@
+* {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.game-title {
+    font-size: 3em;
+    font-weight: bold;
+    animation: fadeIn ease-out 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.game-subtitle {
+    font-size: 2em;
+    animation: fadeIn ease-out 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+.start-btn {
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 1em;
+    margin: 20px;
+    opacity: 0;
+    animation: fadeIn ease-out 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    transition: .4s ease-in-out;
+}
+
+.start-btn:hover {
+    cursor: pointer;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-width: 5px;
+}
+
+.game-name-list-width {
+    min-width: 50%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.game-name-list {
+    min-width: 50%;
+    max-width: 400px;
+}
+
+.game-name-list li {
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  height: 0;
+}
+
+.game-name-list li.show {
+  opacity: 1;
+  height: auto;
+}
+
+
+
+.vh-90{
+    min-height:90vh;
+}
