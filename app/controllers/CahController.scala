@@ -48,7 +48,14 @@ class CahController @Inject()(cc: ControllerComponents) extends AbstractControll
       "numberOfPlayableRounds" -> JsNumber(gameController.getGameManager().numberOfPlayableRounds),
       "numberOfRounds" -> JsNumber(gameController.getGameManager().numberOfRounds),
       "activePlayer" -> JsNumber(gameController.getGameManager().activePlayer),
-      "kompositumCard" -> kompCardToJson(),
+      "kompositumCard" -> Json.obj("cardList" -> Json.obj(
+        "questionCards" -> JsArray(for (card <- gameController.getGameManager().kompositumCard.cardList if card.isInstanceOf[QuestionCard]) yield
+          JsString(card.toString)
+        ),
+        "answerCards" -> JsArray(for (card <- gameController.getGameManager().kompositumCard.cardList if card.isInstanceOf[AnswerCard]) yield
+          JsString(card.toString)
+        )
+      )),
       "player" -> JsArray(for (dude <- gameController.getGameManager().player) yield Json.obj(
       "name" -> dude.name,
       "state" -> JsBoolean(dude.isAnswering),
@@ -66,24 +73,5 @@ class CahController @Inject()(cc: ControllerComponents) extends AbstractControll
     Ok(jsonOut)
 
   }
-
-   def kompCardToJson(): String = {
-    Json.obj("cardList" -> Json.obj(
-      "questionCards" -> JsArray(for (card
-    <- gameController.getGameManager().kompositumCard.cardList
-    if card.isInstanceOf[QuestionCard])
-    yield
-    JsString(card.toString)
-    ),
-    "answerCards" -> JsArray(for (card
-    <- gameController.getGameManager().kompositumCard.cardList
-    if card.isInstanceOf[AnswerCard])
-    yield
-    JsString(card.toString)
-    )
-    ) ).toString
-  }
-
-
 }
 

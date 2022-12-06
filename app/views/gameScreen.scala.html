@@ -6,15 +6,29 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/game.css")">
         <div class="container text-center">
             <div class="row">
-                <div class="col">
-                    <p class="game-subtitle">player 1</p>
+                <div class="col align-items-center">
+                    <div class='played-cardstack'>
+                    </div>
+                    <p class="game-subtitle"  id="player">player 1</p>
+                    <div class='cardstack'>
+                    </div>
                 </div>
-                <div class="col">
-                    <p class="game-subtitle">player 2</p>
+                <div class="col align-items-center">
+                    <div class='played-cardstack'>
+                    </div>
+                    <p class="game-subtitle" id="player">player 2</p>
+                    <div class='cardstack'>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+
 <script src="@routes.Assets.versioned("javascripts/game.js")" ></script>
 }

@@ -82,3 +82,159 @@
 .vh-90{
     min-height:90vh;
 }
+
+@import 'https://fonts.googleapis.com/css?family=Droid+Sans+Mono';
+
+.cardContainer{
+    overflow:hidden;
+    margin-left:10%;
+}
+
+.card{
+    /* Card Sizing */
+    width: 2.5in;
+    height: 4in;
+    border-radius: .25in;
+
+    /* Display Properties */
+    float: left;
+    margin: 10px;
+}
+
+.dark{
+    /* Color information */
+    border: 3px solid white;
+    color: white;
+    background: black;
+}
+
+.light{
+    /* Color information */
+    border: 3px solid black;
+    color: black;
+    background: white;
+}
+
+.cardtext{
+    /*font information*/
+    font-family: Helvetica,sans-serif;
+    font-weight: bolder;
+    font-size: 26px;
+    padding-left:7%;
+    padding-right:7%;
+    word-wrap: break-word;
+}
+
+.subtext{
+    /*font information*/
+    font-family: Helvetica,sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding-left:7%;
+    padding-right:7%;
+    word-wrap: break-word;
+}
+
+.menu{
+    list-style-type: none;
+}
+
+.played-cardstack{
+    width:2.5in;
+    float: top;
+    margin: auto;
+}
+
+.played-stackcard{
+    /* Card Sizing */
+    width: 2.5in;
+    height: 4in;
+    border-radius: .25in;
+
+    /* Display Properties */
+    position:relative;
+    margin: 10px;
+}
+
+.played-stackcard:hover{
+    transition: all 0.8s;
+    transform-style: preserve-3d;
+    transform: rotateZ(10deg);
+    translate: 50px;
+    z-index: 1000;
+}
+
+.played-stackcard:first-child{
+    margin: 10px;
+    margin-top: 0in !important;
+}
+
+.played-stackcard:nth-child(n){
+    margin: 10px;
+    margin-top: -3in;
+}
+
+.cardstack{
+    width:2.5in;
+    float: top;
+    margin: auto;
+}
+
+.stackcard{
+    /* Card Sizing */
+    width: 2.5in;
+    height: 4in;
+    border-radius: .25in;
+
+    /* Display Properties */
+    position:absolute;
+    margin: 10px;
+}
+
+.stackcard:hover{
+    transition: all 0.8s;
+    transform-style: preserve-3d;
+    transform: rotateZ(10deg);
+    translate: 50px;
+    z-index: 1000;
+}
+
+.stackcard:nth-child(2){
+    margin: 10px;
+    margin-top: 80px;
+}
+
+.stackcard:nth-child(3){
+    margin: 10px;
+    margin-top: 150px;
+}
+
+.stackcard:nth-child(4){
+    margin: 10px;
+    margin-top: 220px;
+}
+
+.stackcard:nth-child(5){
+    margin: 10px;
+    margin-top: 290px;
+}
+
+.stackcard:nth-child(6){
+    margin: 10px;
+    margin-top: 360px;
+}
+
+.stackcard:nth-child(7){
+    margin: 10px;
+    margin-top: 430px;
+}
+
+.stackcard:nth-child(8){
+    margin: 10px;
+    margin-top: 500px;
+}
+
+.stackcard:nth-child(9){
+    margin: 10px;
+    margin-top: 570px;
+}
