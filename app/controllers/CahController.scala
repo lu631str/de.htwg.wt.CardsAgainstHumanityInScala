@@ -27,7 +27,6 @@ class CahController @Inject()(cc: ControllerComponents) extends AbstractControll
     views.html.cah(controller)
   }
 
-
   def startGame: Action[AnyContent] = Action {
     Ok(views.html.newGame(controller))
   }

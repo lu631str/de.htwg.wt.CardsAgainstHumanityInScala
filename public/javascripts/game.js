@@ -7,6 +7,15 @@ function getGamePage(cFunction, last) {
     })
 }
 
+function evaluate(input, cFunction) {
+    $.ajax({
+        url:"eval/"+input,
+        type:"POST",
+        contentType:"text/plain",
+        success: function() {cFunction();}
+    })
+}
+
 function updateGamePage(data, last) {
     let json_data = $.parseJSON(data);
     document.getElementById('current-question').innerHTML = json_data.game.roundQuestion;

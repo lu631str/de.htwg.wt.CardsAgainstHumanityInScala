@@ -1,5 +1,9 @@
-* {
+body {
     background-color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
     color: #FFFFFF;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -22,12 +26,18 @@
 }
 
 .game-subtitle {
+    color: #FFFFFF;
     font-size: 2em;
     animation: fadeIn ease-out 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-delay: 1s;
     opacity: 0;
+}
+
+.game-subtitle-dark {
+    color: #555555 !important;
+    font-size: 2em;
 }
 
 .start-btn {
