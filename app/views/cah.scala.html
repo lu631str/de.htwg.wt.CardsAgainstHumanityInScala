@@ -1,0 +1,21 @@
+@(controller: control.ControllerInterface)
+
+
+
+@main("HTWG CAH") {
+    <div class="d-flex align-items-center vh-90">
+        <div class="container justify-centerContainer-center">
+            <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/index.css")">
+            <div class="d-flex justify-content-center">
+                <h1 class="index-title">Cards Against Humanity</h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="index-subtitle">A game for horrible people...</p>
+            </div>
+
+            <form class="d-flex justify-content-center">
+                <button type="submit" class="start-btn" formaction="/startGame">Start Game</button>
+            </form>
+        </div>
+    </div>
+}
