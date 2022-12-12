@@ -3,6 +3,28 @@ document.getElementById("name_textfield").addEventListener("change", addName);
 document.getElementById("start_btn").addEventListener("click", startGame)
 
 var playerNameList = [];
+var websocket = new WebSocket("ws://localhost:9000/websocket");
+function connectWebSocket() {
+
+    websocket.onopen = function(event) {
+        console.log("Connected to Websocket");
+    }
+
+    websocket.onclose = function () {
+        console.log('Connection with Websocket Closed!');
+    };
+
+    websocket.onerror = function (error) {
+        console.log('Error in Websocket Occured: ' + error);
+    };
+
+    websocket.onmessage = function (e) {
+        if (typeof e.data === "string") {
+            getGamePage(e.data)
+        }
+
+    };
+}
 
 function addName() {
     var nameField = document.getElementById("name_textfield")
@@ -23,12 +45,8 @@ function addName() {
 }
 
 function evaluate(input, cFunction) {
-  $.ajax({
-    url:"eval/"+input,
-    type:"POST",
-    contentType:"text/plain",
-    success: function() {cFunction();}
-  })
+    websocket.send(input);
+    cFunction();
 }
 
 function startGame() {
@@ -50,3 +68,11 @@ function startGame3() {
         $(location).prop('href', '/gameScreen');
     }
 }
+
+
+
+
+
+$(document).ready(function() {
+    connectWebSocket()
+});
