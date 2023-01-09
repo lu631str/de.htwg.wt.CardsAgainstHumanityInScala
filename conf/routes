@@ -12,7 +12,7 @@ GET         /gameScreen          controllers.CahController.gameScreen
 +nocsrf
 POST        /eval/:input         controllers.CahController.eval(input: String)
 +nocsrf
-#GET        /getGamePage         controllers.CahController.getGamePage()
+GET        /loadJson         controllers.CahController.loadJson()
 
 
 GET     /websocket                  controllers.CahController.socket

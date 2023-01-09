@@ -17,13 +17,6 @@ function connectWebSocket() {
     websocket.onerror = function (error) {
         console.log('Error in Websocket Occured: ' + error);
     };
-
-    websocket.onmessage = function (e) {
-        if (typeof e.data === "string") {
-            getGamePage(e.data)
-        }
-
-    };
 }
 
 function addName() {
@@ -66,6 +59,7 @@ function startGame3() {
         evaluate(playerNameList.pop(), startGame3);
     } else {
         $(location).prop('href', '/gameScreen');
+        websocket.close()
     }
 }
 
