@@ -27,6 +27,14 @@ function evaluate(input, cFunction) {
     cFunction();
 }
 
+function evaluate2(input) {
+    websocket.send(input);
+}
+
+function updateGameData() {
+    websocket.send("update");
+}
+
 
 function loadJson(cFunction, last) {
     $.ajax({
@@ -38,6 +46,7 @@ function loadJson(cFunction, last) {
 }
 function updateData(input) {
    data = input;
+    updateGamePage(data)
 }
 
 function useUpdatedData(cFunction, last) {
@@ -78,11 +87,15 @@ function updateGamePage(data, last) {
                 if (i === json_data.game.activePlayer) {
                     if (i === json_data.game.numberOfPlayers - 1) {
                         newCard.addEventListener("click", function () {
-                            lastCardClicked(cardIndex)
+                            evaluate2(cardIndex);
+                            setTimeout(function(){ showPlayedCard(this.data,true);}, 2000);
+                            console.log("lastCardClicked")
                         });
                     } else {
                         newCard.addEventListener("click", function () {
-                            cardClicked(cardIndex)
+                            evaluate2(cardIndex);
+                            setTimeout(function(){ showPlayedCard(this.data,false);}, 2000);
+                            console.log("CardClicked")
                         });
                     }
                 }
@@ -104,20 +117,6 @@ function updateGamePage(data, last) {
         }
     }
 
-
-
-}
-
-function cardClicked(card) {
-    evaluate(card, function () {getPlayedCard(false)});
-}
-
-function lastCardClicked(card) {
-    evaluate(card, function () {getPlayedCard(true)});
-}
-
-function getPlayedCard(last) {
-    useUpdatedData(showPlayedCard, last);
 }
 
 function showPlayedCard(data, last) {
@@ -128,8 +127,11 @@ function showPlayedCard(data, last) {
         let cardstacks = document.querySelectorAll('[class^=played-cardstack]');
         let current_card_index = json_data.game.roundAnswerCards.length - 1;
         let i = 0;
+        console.log(current_card_index)
         for (let cardstack in cardstacks) {
             if (i === current_card_index) {
+                console.log("showPlayedCardnooooow")
+
                 let newCard = document.createElement("div");
                 newCard.classList.add("dark");
                 newCard.classList.add("played-stackcard");
@@ -158,9 +160,11 @@ function showPlayedCard(data, last) {
 }
 
 function nextCard() {
-    evaluate("next", function () {getGamePage(updateGamePage,false)});
+    evaluate("next", function () {useUpdatedData(updateGamePage,false)});
 }
 $(document).ready(function() {
     connectWebSocket()
     setTimeout(function(){ loadJson(updateGamePage, false);}, 1000);
+    setTimeout(function(){ updateGameData();}, 2000);
+    setTimeout(function(){ console.log(data)}, 3000);
 });

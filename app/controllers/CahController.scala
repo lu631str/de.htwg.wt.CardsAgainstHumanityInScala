@@ -67,7 +67,13 @@ class CahController @Inject()(cc: ControllerComponents)(implicit system: ActorSy
             println("empty message")
           } else if (msg == "opening connection") {
             println("opening message")
-          } else {
+
+          }
+          else if (msg == "update") {
+            getGamePage
+            println("update")
+
+          }else {
             gameController.eval(msg)
             getGamePage
             println(msg)
