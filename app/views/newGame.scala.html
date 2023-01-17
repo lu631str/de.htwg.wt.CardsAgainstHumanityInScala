@@ -1,0 +1,34 @@
+@(controller: control.ControllerInterface)
+
+@main("HTWG CAH") {
+<div class="d-flex align-items-center vh-90">
+    <div class="container justify-centerContainer-center">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/game.css")">
+        <div class="d-flex justify-content-center">
+            <h1 class="game-title">Cards Against Humanity</h1>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="game-subtitle">Please enter your names:</p>
+        </div>
+
+        <div class="d-flex justify-content-center input-group mb-3 game-name-list-width">
+            <button class="btn btn-outline-secondary" type="button" id="add_name_button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                </svg>
+            </button>
+            <input type="text" class="form-control" placeholder="" id="name_textfield">
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <ul class="list-group game-name-list-width game-name-list" id="game-name-list">
+            </ul>
+        </div>
+
+        <form class="d-flex justify-content-center">
+            <button type="button" class="start-btn" id="start_btn">set</button>
+        </form>
+    </div>
+</div>
+<script src="@routes.Assets.versioned("javascripts/newgame.js")" ></script>
+}

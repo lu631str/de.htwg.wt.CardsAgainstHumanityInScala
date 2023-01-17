@@ -2,21 +2,20 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Controller for Sudoku
+# Controller for CaH
 
-GET     /                           controllers.SudokuController.sudoku
-GET     /new                        controllers.SudokuController.newGrid
-GET     /solve                      controllers.SudokuController.solve
-GET     /highlight/:index           controllers.SudokuController.highlight(index:Int)
-GET     /resize/:size               controllers.SudokuController.resize(size:Int)
-GET     /set/:row/:col/:value       controllers.SudokuController.set(row:Int,col:Int, value:Int)
-GET     /showCandidates/:row/:col   controllers.SudokuController.showCandidates(row:Int, col:Int)
+GET         /                    controllers.CahController.home
+GET         /about               controllers.CahController.about
+GET         /startGame           controllers.CahController.startGame
+GET         /gameScreen          controllers.CahController.gameScreen
 
-GET     /about                      controllers.SudokuController.about
++nocsrf
+POST        /eval/:input         controllers.CahController.eval(input: String)
++nocsrf
+GET        /loadJson         controllers.CahController.loadJson()
 
-GET     /json                       controllers.SudokuController.gridToJson
 
-GET     /websocket                  controllers.SudokuController.socket
+GET     /websocket                  controllers.CahController.socket
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET         /assets/*file        controllers.Assets.versioned(path="/public", file: Asset)

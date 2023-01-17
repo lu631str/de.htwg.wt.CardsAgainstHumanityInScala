@@ -1,0 +1,250 @@
+body {
+    background-color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.game-title {
+    font-size: 3em;
+    font-weight: bold;
+    animation: fadeIn ease-out 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.game-subtitle {
+    color: #FFFFFF;
+    font-size: 2em;
+    animation: fadeIn ease-out 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+.game-subtitle-dark {
+    color: #555555 !important;
+    font-size: 2em;
+}
+
+.start-btn {
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 1em;
+    margin: 20px;
+    opacity: 0;
+    animation: fadeIn ease-out 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    transition: .4s ease-in-out;
+}
+
+.start-btn:hover {
+    cursor: pointer;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-width: 5px;
+}
+
+.game-name-list-width {
+    min-width: 50%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.game-name-list {
+    min-width: 50%;
+    max-width: 400px;
+}
+
+.game-name-list li {
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  height: 0;
+}
+
+.game-name-list li.show {
+  opacity: 1;
+  height: auto;
+}
+
+
+
+.vh-90{
+    min-height:90vh;
+}
+
+@import 'https://fonts.googleapis.com/css?family=Droid+Sans+Mono';
+
+.cardContainer{
+    overflow:hidden;
+    margin-left:10%;
+}
+
+.card{
+    /* Card Sizing */
+    width: 2.5in;
+    height: 4in;
+    border-radius: .25in;
+
+    /* Display Properties */
+    float: left;
+    margin: 10px;
+}
+
+.dark{
+    /* Color information */
+    border: 3px solid white;
+    color: white;
+    background: black;
+}
+
+.light{
+    /* Color information */
+    border: 3px solid black;
+    color: black;
+    background: white;
+}
+
+.cardtext{
+    /*font information*/
+    font-family: Helvetica,sans-serif;
+    font-weight: bolder;
+    font-size: 26px;
+    padding-left:7%;
+    padding-right:7%;
+    word-wrap: break-word;
+}
+
+.subtext{
+    /*font information*/
+    font-family: Helvetica,sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding-left:7%;
+    padding-right:7%;
+    word-wrap: break-word;
+}
+
+.menu{
+    list-style-type: none;
+}
+
+.played-cardstack{
+    width:2.5in;
+    float: top;
+    margin: auto;
+}
+
+.played-stackcard{
+    /* Card Sizing */
+    width: 2.5in;
+    height: 4in;
+    border-radius: .25in;
+
+    /* Display Properties */
+    position:relative;
+    margin: 10px;
+}
+
+.played-stackcard:hover{
+    transition: all 0.8s;
+    transform-style: preserve-3d;
+    transform: rotateZ(10deg);
+    translate: 50px;
+    z-index: 1000;
+}
+
+.played-stackcard:first-child{
+    margin: 10px;
+    margin-top: 0in !important;
+}
+
+.played-stackcard:nth-child(n){
+    margin: 10px;
+    margin-top: -3in;
+}
+
+.cardstack{
+    width:2.5in;
+    float: top;
+    margin: auto;
+}
+
+.stackcard{
+    /* Card Sizing */
+    width: 2.5in;
+    height: 4in;
+    border-radius: .25in;
+
+    /* Display Properties */
+    position:absolute;
+    margin: 10px;
+}
+
+.stackcard:hover{
+    transition: all 0.8s;
+    transform-style: preserve-3d;
+    transform: rotateZ(10deg);
+    translate: 50px;
+    z-index: 1000;
+}
+
+.stackcard:nth-child(2){
+    margin: 10px;
+    margin-top: 80px;
+}
+
+.stackcard:nth-child(3){
+    margin: 10px;
+    margin-top: 150px;
+}
+
+.stackcard:nth-child(4){
+    margin: 10px;
+    margin-top: 220px;
+}
+
+.stackcard:nth-child(5){
+    margin: 10px;
+    margin-top: 290px;
+}
+
+.stackcard:nth-child(6){
+    margin: 10px;
+    margin-top: 360px;
+}
+
+.stackcard:nth-child(7){
+    margin: 10px;
+    margin-top: 430px;
+}
+
+.stackcard:nth-child(8){
+    margin: 10px;
+    margin-top: 500px;
+}
+
+.stackcard:nth-child(9){
+    margin: 10px;
+    margin-top: 570px;
+}
