@@ -1,3 +1,31 @@
+const app = Vue.createApp({})
+
+
+app.component('cah-field', {
+    template: `            <div class="container align-items-center"><h1 id="current-question">loading...</h1></div>
+            <div class="row">
+                <div class="col align-items-center">
+                    <div class='played-cardstack'>
+                    </div>
+                    <p class="game-subtitle"  id="player">player 1</p>
+                    <div class='cardstack'>
+                    </div>
+                </div>
+                <div class="col align-items-center">
+                    <div class='played-cardstack'>
+                    </div>
+                    <p class="game-subtitle" id="player">player 2</p>
+                    <div class='cardstack'>
+                    </div>
+                </div>
+            </div>
+    `,
+    data: function () {
+
+        return {}
+    },
+})
+
 var websocket = new WebSocket("ws://localhost:9000/websocket");
 var data;
 function connectWebSocket() {
@@ -168,3 +196,6 @@ $(document).ready(function() {
     setTimeout(function(){ updateGameData();}, 2000);
     setTimeout(function(){ console.log(data)}, 3000);
 });
+
+
+app.mount('#game')
